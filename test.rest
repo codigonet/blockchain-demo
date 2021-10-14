@@ -1,0 +1,11 @@
+###
+# Minar el Bloque
+GET http://localhost:5000/mine_block
+
+###
+# Obtener la Cadena
+GET http://localhost:5000/get_chain
+
+###
+# Valida la Cadena
+GET http://localhost:5000/is_valid
