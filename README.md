@@ -33,10 +33,28 @@ source test.rest
 
 - Utilizar las siguientes URL en orden:
     - http://localhost:5000/get_chain
+    <img src="img/1.png" style="width: 95%"/>
+
     - http://localhost:5000/mine_block
+    <img src="img/2.png" style="width: 95%"/>
+
     - http://localhost:5000/mine_block
+    <img src="img/3.png" style="width: 95%"/>
+
     - http://localhost:5000/get_chain
+    <img src="img/4.png" style="width: 95%"/>
+
     - http://localhost:5000/is_valid
+    <img src="img/5.png" style="width: 95%"/>
+
     - http://localhost:5000/add_bad_block
+    <img src="img/6.png" style="width: 95%"/>
+
     - http://localhost:5000/get_chain
+    <img src="img/7.png" style="width: 95%"/>
+
     - http://localhost:5000/is_valid
+    <img src="img/8.png" style="width: 95%"/>
+
+- También se puede importar la colección Postman:
+<a href="Tarea1.postman_collection.json">Colección Postman</a>
