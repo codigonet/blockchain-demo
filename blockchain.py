@@ -50,6 +50,7 @@ class Blockchain:
             block_index += 1
         return True
 
-    def add_bad_block(self):
-        # TODO: implement bad block
-        pass
+    def add_bad_block(self, previous_proof):
+        print(f"do not do any WORK to get PoW for previous PROOF: {previous_proof}")
+        new_proof = 123
+        return new_proof

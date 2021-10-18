@@ -37,15 +37,22 @@ def is_valid():
     if is_valid:
         response = {'message': 'All good. The Blockchain is valid.'}
     else:
-        response = {'message': 'Houston, we have a problem. The Blockchain is not valid.'}
+        response = {'message': 'Oh no, The Blockchain is corrupt, do not put your REAL money here, unless you want to loss it!!!'}
     return jsonify(response), 200
 
 # TODO: Implement call to Add Bad Block
 @app.route('/add_bad_block', methods = ['GET'])
 def add_bad_block():
-    blockchain.add_bad_block()
-    response = {'message': 'To be implemented...'}
+    previous_block = blockchain.get_previous_block()
+    previous_proof = previous_block['proof']
+    proof = blockchain.add_bad_block(previous_proof)
+    previous_hash = blockchain.hash(previous_block)
+    block = blockchain.create_block(proof, previous_hash)
+    response = {'message': 'It is a TRAP, you did not any WORK to get PoW!',
+                'index': block['index'],
+                'timestamp': block['timestamp'],
+                'proof': block['proof'],
+                'previous_hash': block['previous_hash']}
     return jsonify(response), 200
-
 # Running the app
 app.run(host = '0.0.0.0', port = 5000)
