@@ -50,6 +50,6 @@ class Blockchain:
             block_index += 1
         return True
 
-    def add_bad_block():
+    def add_bad_block(self):
         # TODO: implement bad block
         pass
