@@ -1,11 +1,26 @@
-###
-# Minar el Bloque
-GET http://localhost:5000/mine_block
+### Flujo de Pruebas
 
 ###
 # Obtener la Cadena
-GET http://localhost:5000/get_chain
+curl http://localhost:5000/get_chain
+
+### Minar 2 bloques
+curl http://localhost:5000/mine_block
 
 ###
-# Valida la Cadena
-GET http://localhost:5000/is_valid
+curl http://localhost:5000/mine_block
+
+### Obtener la Cadena, debe entregar los bloques minados (3)
+curl http://localhost:5000/get_chain
+
+### Validar la Cadena, debe ser válida
+curl http://localhost:5000/is_valid
+
+### Minar un bloque MALO
+curl http://localhost:5000/add_bad_block
+
+### Obtener la Cadena, debe entregar los bloques minados, más el bloque MALO
+curl http://localhost:5000/get_chain
+
+### Validar la Cadena, debe indicar que la cadena no es válida
+curl http://localhost:5000/is_valid
