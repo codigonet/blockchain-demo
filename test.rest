@@ -1,26 +1,33 @@
 ### Flujo de Pruebas
 
 ###
-# Obtener la Cadena
+echo "###############################\nObtener la Cadena..."
 curl http://localhost:5000/get_chain
 
-### Minar 2 bloques
+###
+echo "###############################\nMinar bloque nuevo 1..."
 curl http://localhost:5000/mine_block
 
 ###
+echo "###############################\nMinar bloque nuevo 2..."
 curl http://localhost:5000/mine_block
 
-### Obtener la Cadena, debe entregar los bloques minados (3)
+###
+echo "###############################\nObtener la Cadena, debe entregar los bloques minados (3 en total)..."
 curl http://localhost:5000/get_chain
 
-### Validar la Cadena, debe ser válida
+###
+echo "###############################\nValidar la Cadena, debe ser válida..."
 curl http://localhost:5000/is_valid
 
-### Minar un bloque MALO
+### 
+echo "###############################\nMinar un bloque MALO..."
 curl http://localhost:5000/add_bad_block
 
-### Obtener la Cadena, debe entregar los bloques minados, más el bloque MALO
+### 
+echo "###############################\nObtener la Cadena, debe entregar los bloques minados, más el bloque MALO..."
 curl http://localhost:5000/get_chain
 
-### Validar la Cadena, debe indicar que la cadena no es válida
+###
+echo "###############################\nValidar la Cadena, debe indicar que la cadena no es válida..."
 curl http://localhost:5000/is_valid
